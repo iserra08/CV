@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iker Serrano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="es"><img src="Español.png" alt="Español"></button>
+        <button class="lang-btn" data-lang="ca"><img src="Català.png" alt="Català"></button>
+        <button class="lang-btn" data-lang="en"><img src="English.png" alt="English"></button>
+    </div>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="name">Iker Serrano</h1>
+                <h2 class="title" data-i18n="title">Auxiliar Informático</h2>
+                <p class="tagline"></p>
+                <a href="#contact" class="btn btn-primary" data-i18n="contactBtn">Contáctame</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="aboutTitle">Sobre Mí</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3 data-i18n="ageLabel">Edad</h3>
+                        <p data-i18n="ageValue">17 años</p>
+                    </div>
+                    <div class="about-card">
+                        <h3 data-i18n="locationLabel">Ubicación</h3>
+                        <p data-i18n="locationValue">Barcelona, España</p>
+                    </div>
+                    <div class="about-card">
+                        <h3 data-i18n="languagesLabel">Idiomas</h3>
+                        <p data-i18n="languagesValue">Castellano*, Catalán, Inglés</p>
+                    </div>
+                    <div class="about-text">
+                        <p data-i18n="aboutText">Técnico en formación en el ámbito de sistemas microinformáticos y
+                            redes, con experiencia práctica en mantenimiento de equipos y gestión básica de redes y
+                            servicios. Me parece que destaco por mi capacidad y por mi interés constante en aprender y
+                            aplicar nuevas tecnologías. He participado en diversos proyectos reales, desde configuración
+                            de servidores y herramientas online hasta pequeñas automatizaciones, lo que me ha permitido
+                            desarrollar un enfoque práctico y orientado a soluciones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="experienceTitle">Experiencia</h2>
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="date" data-i18n="exp1Date">2025 - actualmente</span>
+                            <h3 data-i18n="exp1Title">Becario informático</h3>
+                            <h4>Escola Marinada el Masnou</h4>
+                            <p data-i18n="exp1Desc">Prácticas duales de 515h</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="date" data-i18n="exp2Date">2023 - 2025</span>
+                            <h3 data-i18n="exp2Title">Informático personal</h3>
+                            <h4></h4>
+                            <p data-i18n="exp2Desc">Educación a gente mayor e ayuda con tareas informáticas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="educationTitle">Formación</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3 data-i18n="edu1Title">Sistemas MicroInformáticos y Redes</h3>
+                        <p class="institution">Institut Badalona VII</p>
+                        <p class="year" data-i18n="edu1Year">2024 - Actualmente</p>
+                    </div>
+                    <div class="card">
+                        <h3 data-i18n="edu2Title">Educación Secundaria Obligatoria</h3>
+                        <p class="institution">Institut Maremar</p>
+                        <p class="year">2020 - 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="skillsTitle">Habilidades</h2>
+                <div class="skills-wrapper">
+                    <span class="skill-tag" data-i18n="skill1">Soporte informático</span>
+                    <span class="skill-tag" data-i18n="skill2">Administración de sistemas</span>
+                    <span class="skill-tag" data-i18n="skill3">Gestión de software y herramientas</span>
+                    <span class="skill-tag" data-i18n="skill4">Programación</span>
+                    <span class="skill-tag" data-i18n="skill5">Soporte a usuarios</span>
+                    <span class="skill-tag" data-i18n="skill6">Resolución de problemas</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="projectsTitle">Proyectos Personales</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3 data-i18n="proj1Title">Servidor de Minecraft</h3>
+                        <p data-i18n="proj1Desc">Configuración y gestión de servidores de Minecraft. Incluyendo plugins,
+                            automatizaciones y minijuegos.</p>
+                        <a href="#" class="project-link" data-i18n="projectUnavailable">🚫 No disponible</a>
+                    </div>
+                    <div class="card">
+                        <h3 data-i18n="proj2Title">Sites de Extensiones</h3>
+                        <p data-i18n="proj2Desc">Elaboración de un Google Sites, sobre extensiones de archivos y
+                            comandos de Windows/Unix.
+                            <br>(Mini-Proyecto del grado)
+                        </p>
+                        <a href="https://sites.google.com/institutb7.cat/extensionesdearchivo?usp=sharing"
+                            class="project-link" data-i18n="viewProject">Ver Proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="contactTitle">Contacto</h2>
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:ik.serra08@gmail.com">ik.serra08@gmail.com</a></p>
+                    <p><span data-i18n="phoneLabel">Teléfono</span>: <a href="https://wa.me/640682461">+34 640 68 24
+                            61</a>
+                    </p>
+                    <p>LinkedIn: <a
+                            href="https://www.linkedin.com/in/iker-serrano-guill%C3%A9n">https://www.linkedin.com/in/iker-serrano-guillén</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Iker Serrano. <span data-i18n="rights">Todos los derechos reservados.</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
