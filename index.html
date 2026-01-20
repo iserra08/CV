@@ -12,13 +12,27 @@
 </head>
 
 <body>
+    <button id="menu-toggle" aria-label="Menu">☰</button>
     <div class="language-switcher">
         <button class="lang-btn active" data-lang="es"><img src="Español.png" alt="Español"></button>
         <button class="lang-btn" data-lang="ca"><img src="Català.png" alt="Català"></button>
         <button class="lang-btn" data-lang="en"><img src="English.png" alt="English"></button>
     </div>
 
-    <header class="hero">
+    <nav id="sidebar">
+        <div class="logo">iserra</div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-link active" data-i18n="navHome">Inicio</a></li>
+            <li><a href="#about" class="nav-link" data-i18n="navAbout">Sobre Mí</a></li>
+            <li><a href="#experience" class="nav-link" data-i18n="navExp">Experiencia</a></li>
+            <li><a href="#education" class="nav-link" data-i18n="navEdu">Formación</a></li>
+            <li><a href="#skills" class="nav-link" data-i18n="navSkills">Habilidades</a></li>
+            <li><a href="#projects" class="nav-link" data-i18n="navProj">Proyectos</a></li>
+            <li><a href="#contact" class="nav-link" data-i18n="navContact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="hero">
         <div class="container">
             <div class="hero-content">
                 <h1 class="name">Iker Serrano</h1>
@@ -94,11 +108,13 @@
                         <h3 data-i18n="edu1Title">Sistemas MicroInformáticos y Redes</h3>
                         <p class="institution">Institut Badalona VII</p>
                         <p class="year" data-i18n="edu1Year">2024 - Actualmente</p>
+                        <a href="#" class="edu-link" data-i18n="visitCenter">Visitar Centro</a>
                     </div>
                     <div class="card">
                         <h3 data-i18n="edu2Title">Educación Secundaria Obligatoria</h3>
                         <p class="institution">Institut Maremar</p>
                         <p class="year">2020 - 2024</p>
+                        <a href="#" class="edu-link" data-i18n="visitCenter">Visitar Centro</a>
                     </div>
                 </div>
             </div>
@@ -108,12 +124,31 @@
             <div class="container">
                 <h2 class="section-title" data-i18n="skillsTitle">Habilidades</h2>
                 <div class="skills-wrapper">
-                    <span class="skill-tag" data-i18n="skill1">Soporte informático</span>
-                    <span class="skill-tag" data-i18n="skill2">Administración de sistemas</span>
-                    <span class="skill-tag" data-i18n="skill3">Gestión de software y herramientas</span>
-                    <span class="skill-tag" data-i18n="skill4">Programación</span>
-                    <span class="skill-tag" data-i18n="skill5">Soporte a usuarios</span>
-                    <span class="skill-tag" data-i18n="skill6">Resolución de problemas</span>
+                    <details class="skill-category">
+                        <summary data-i18n="skillCatProg">Programación</summary>
+                        <div class="skill-content">
+                            <p>HTML, CSS, JS, PYTHON</p>
+                        </div>
+                    </details>
+                    <details class="skill-category">
+                        <summary data-i18n="skillCatSysAdmin">Administración de Sistemas</summary>
+                        <div class="skill-content">
+                            <p>Linux, Windows, Windows Server</p>
+                        </div>
+                    </details>
+                    <details class="skill-category">
+                        <summary data-i18n="skillCatTools">Herramientas y Software</summary>
+                        <div class="skill-content">
+                            <p data-i18n="skillDescTools">Gestión de software, ofimática, herramientas de soporte.</p>
+                        </div>
+                    </details>
+                    <details class="skill-category">
+                        <summary data-i18n="skillCatSupport">Soporte y Resolución</summary>
+                        <div class="skill-content">
+                            <p data-i18n="skillDescSupport">Soporte a usuarios, resolución de incidencias,
+                                mantenimiento.</p>
+                        </div>
+                    </details>
                 </div>
             </div>
         </section>
@@ -129,10 +164,9 @@
                         <a href="#" class="project-link" data-i18n="projectUnavailable">🚫 No disponible</a>
                     </div>
                     <div class="card">
-                        <h3 data-i18n="proj2Title">Sites de Extensiones</h3>
-                        <p data-i18n="proj2Desc">Elaboración de un Google Sites, sobre extensiones de archivos y
-                            comandos de Windows/Unix.
-                            <br>(Mini-Proyecto del grado)
+                        <h3 data-i18n="proj2Title">Web de Extensiones</h3>
+                        <p data-i18n="proj2Desc">Elaboración de una página web, sobre extensiones de archivos, comandos
+                            y más...
                         </p>
                         <a href="https://sites.google.com/institutb7.cat/extensionesdearchivo?usp=sharing"
                             class="project-link" data-i18n="viewProject">Ver Proyecto</a>
@@ -159,7 +193,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Iker Serrano. <span data-i18n="rights">Todos los derechos reservados.</span></p>
+            <p>&copy; 2026 Iker Serrano. <span data-i18n="rights">Todos los derechos reservados.</span></p>
         </div>
     </footer>
 

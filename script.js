@@ -16,7 +16,7 @@ const translations = {
         exp1Desc: "Prácticas duales de 515h",
         exp2Date: "2023 - 2025",
         exp2Title: "Informático personal",
-        exp2Desc: "Educación a gente mayor e ayuda con tareas informáticas",
+        exp2Desc: "Formación a gente mayor y ayuda con tareas informáticas",
         educationTitle: "Formación",
         edu1Title: "Sistemas MicroInformáticos y Redes",
         edu1Year: "2024 - Actualmente",
@@ -32,12 +32,29 @@ const translations = {
         proj1Title: "Servidor de Minecraft",
         proj1Desc: "Configuración y gestión de servidores de Minecraft. Incluyendo plugins, automatizaciones y minijuegos.",
         projectUnavailable: "🚫 No disponible",
-        proj2Title: "Sites de Extensiones",
-        proj2Desc: "Elaboración de un Google Sites, sobre extensiones de archivos y comandos de Windows/Unix. (Mini-Proyecto del grado)",
+        proj2Title: "Web de Extensiones",
+        proj2Desc: "Elaboración de una página web, sobre extensiones de archivos, comandos y más...",
         viewProject: "Ver Proyecto",
         contactTitle: "Contacto",
         phoneLabel: "Teléfono",
-        rights: "Todos los derechos reservados."
+        rights: "Todos los derechos reservados.",
+        // Sidebar
+        navHome: "Inicio",
+        navAbout: "Sobre Mí",
+        navExp: "Experiencia",
+        navEdu: "Formación",
+        navSkills: "Habilidades",
+        navProj: "Proyectos",
+        navContact: "Contacto",
+        // Skills Categories
+        skillCatProg: "Programación",
+        skillCatSysAdmin: "Administración de Sistemas",
+        skillCatTools: "Herramientas y Software",
+        skillCatSupport: "Soporte y Resolución",
+        skillDescTools: "Gestión de software, ofimática, herramientas de soporte.",
+        skillDescSupport: "Soporte a usuarios, resolución de incidencias, mantenimiento.",
+        // Education
+        visitCenter: "Visitar Centro"
     },
     ca: {
         title: "Auxiliar Informàtic",
@@ -56,7 +73,7 @@ const translations = {
         exp1Desc: "Pràctiques duals de 515h",
         exp2Date: "2023 - 2025",
         exp2Title: "Informàtic personal",
-        exp2Desc: "Educació a gent gran i ajuda amb tasques informàtiques",
+        exp2Desc: "Formació a gent gran i ajuda amb tasques informàtiques",
         educationTitle: "Formació",
         edu1Title: "Sistemes Microinformàtics i Xarxes",
         edu1Year: "2024 - Actualment",
@@ -72,8 +89,8 @@ const translations = {
         proj1Title: "Servidor de Minecraft",
         proj1Desc: "Configuració i gestió de servidors de Minecraft. Incloent plugins, automatitzacions i minijocs.",
         projectUnavailable: "🚫 No disponible",
-        proj2Title: "Sites d'Extensions",
-        proj2Desc: "Elaboració d'un Google Sites, sobre extensions d'arxius i comandes de Windows/Unix. (Mini-Projecte del grau)",
+        proj2Title: "Web d'Extensions",
+        proj2Desc: "Elaboració d'una pàgina web, sobre extensions d'arxius, comandes i més...",
         viewProject: "Veure Projecte",
         contactTitle: "Contacte",
         phoneLabel: "Telèfon",
@@ -96,7 +113,7 @@ const translations = {
         exp1Desc: "Dual internship of 515h",
         exp2Date: "2023 - 2025",
         exp2Title: "Personal IT Support",
-        exp2Desc: "Teaching elderly people and helping with IT tasks",
+        exp2Desc: "Training for elderly people and help with IT tasks",
         educationTitle: "Education",
         edu1Title: "Microcomputer Systems and Networks",
         edu1Year: "2024 - Present",
@@ -112,8 +129,8 @@ const translations = {
         proj1Title: "Minecraft Server",
         proj1Desc: "Configuration and management of Minecraft servers. Including plugins, automations, and minigames.",
         projectUnavailable: "🚫 Not available",
-        proj2Title: "Extensions Sites",
-        proj2Desc: "Creation of a Google Sites about file extensions and Windows/Unix commands. (Degree Mini-Project)",
+        proj2Title: "Extensions Web",
+        proj2Desc: "Creation of a website about file extensions, commands and more...",
         viewProject: "View Project",
         contactTitle: "Contact",
         phoneLabel: "Phone",
@@ -122,19 +139,37 @@ const translations = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Language Switcher Logic
+
     const langBtns = document.querySelectorAll('.lang-btn');
+
+    function calculateAge(birthDate) {
+        const today = new Date();
+        const birth = new Date(birthDate);
+        let age = today.getFullYear() - birth.getFullYear();
+        const m = today.getMonth() - birth.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+            age--;
+        }
+        return age;
+    }
+
+    const myAge = calculateAge('2008-02-13');
+
+    // Update translations with dynamic age
+    translations.es.ageValue = `${myAge} años`;
+    translations.ca.ageValue = `${myAge} anys`;
+    translations.en.ageValue = `${myAge} years old`;
 
     langBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Update active button state
+
             langBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            // Get selected language
+
             const lang = btn.getAttribute('data-lang');
 
-            // Update text content
+
             updateLanguage(lang);
         });
     });
@@ -148,11 +183,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Update html lang attribute
+
+
+
+
         document.documentElement.lang = lang;
     }
 
-    // Smooth scrolling for navigation links
+
+
+
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -162,7 +203,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Intersection Observer for scroll animations
+
+
+
+
     const observerOptions = {
         threshold: 0.1
     };
@@ -176,7 +220,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Elements to animate
+
+
+
+
     const sections = document.querySelectorAll('.section');
     const cards = document.querySelectorAll('.card, .about-card, .timeline-item');
 
@@ -192,7 +239,10 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 
-    // Custom animation class logic for cards when they intersect
+
+
+
+
     const cardObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -204,4 +254,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     cards.forEach(card => cardObserver.observe(card));
+
+    // Scroll Spy for Sidebar
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sectionsSpy = document.querySelectorAll('section, header');
+
+    const spyOptions = {
+        rootMargin: '-30% 0px -60% 0px', // Active zone is near the top
+        threshold: 0
+    };
+
+    const spyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                // Remove active class from all links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, spyOptions);
+
+    sectionsSpy.forEach(section => {
+        if (section) spyObserver.observe(section);
+    });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    }
+
+    // Close sidebar when clicking a link (mobile)
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('active');
+            }
+        });
+    });
+
+    // Close sidebar when clicking outside
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 &&
+            sidebar.classList.contains('active') &&
+            !sidebar.contains(e.target) &&
+            !menuToggle.contains(e.target)) {
+            sidebar.classList.remove('active');
+        }
+    });
+
 });
